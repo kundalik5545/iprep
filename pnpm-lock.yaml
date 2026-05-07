@@ -36,6 +36,52 @@ importers:
         specifier: ^8.58.2
         version: 8.59.2(eslint@10.3.0(jiti@2.7.0))(typescript@5.9.3)
 
+  apps/backend:
+    dependencies:
+      '@iprep/db':
+        specifier: workspace:*
+        version: link:../../packages/db
+      '@iprep/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
+      cors:
+        specifier: ^2.8.5
+        version: 2.8.6
+      dotenv:
+        specifier: ^17.4.2
+        version: 17.4.2
+      express:
+        specifier: ^4.18.2
+        version: 4.22.1
+      winston:
+        specifier: ^3.11.0
+        version: 3.19.0
+      ws:
+        specifier: ^8.16.0
+        version: 8.20.0
+      zod:
+        specifier: ^3.22.4
+        version: 3.25.76
+    devDependencies:
+      '@types/cors':
+        specifier: ^2.8.17
+        version: 2.8.19
+      '@types/express':
+        specifier: ^4.17.21
+        version: 4.17.25
+      '@types/node':
+        specifier: ^20.0.0
+        version: 20.19.39
+      '@types/ws':
+        specifier: ^8.5.10
+        version: 8.18.1
+      tsx:
+        specifier: ^4.7.0
+        version: 4.21.0
+      typescript:
+        specifier: ^5.3.3
+        version: 5.9.3
+
   apps/cli:
     dependencies:
       '@iprep/shared':
@@ -115,49 +161,6 @@ importers:
       vite:
         specifier: ^5.1.0
         version: 5.4.21(@types/node@25.6.0)
-
-  apps/server:
-    dependencies:
-      '@iprep/db':
-        specifier: workspace:*
-        version: link:../../packages/db
-      '@iprep/shared':
-        specifier: workspace:*
-        version: link:../../packages/shared
-      cors:
-        specifier: ^2.8.5
-        version: 2.8.6
-      express:
-        specifier: ^4.18.2
-        version: 4.22.1
-      winston:
-        specifier: ^3.11.0
-        version: 3.19.0
-      ws:
-        specifier: ^8.16.0
-        version: 8.20.0
-      zod:
-        specifier: ^3.22.4
-        version: 3.25.76
-    devDependencies:
-      '@types/cors':
-        specifier: ^2.8.17
-        version: 2.8.19
-      '@types/express':
-        specifier: ^4.17.21
-        version: 4.17.25
-      '@types/node':
-        specifier: ^20.0.0
-        version: 20.19.39
-      '@types/ws':
-        specifier: ^8.5.10
-        version: 8.18.1
-      tsx:
-        specifier: ^4.7.0
-        version: 4.21.0
-      typescript:
-        specifier: ^5.3.3
-        version: 5.9.3
 
   packages/db:
     dependencies:

@@ -19,6 +19,9 @@
     "dist/"
   ],
   "scripts": {
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio",
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit"
   },
