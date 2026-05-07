@@ -1,28 +1,31 @@
 {
   "name": "@iprep/db",
   "version": "0.0.1",
-  "description": "iPrep Prisma ORM — SQLite (local) → Postgres (cloud)",
+  "description": "iPrep Prisma ORM database package",
   "type": "module",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./prisma": {
+      "types": "./dist/prisma.d.ts",
+      "import": "./dist/prisma.js"
+    }
   },
+  "files": [
+    "dist/"
+  ],
   "scripts": {
-    "build": "tsc",
-    "typecheck": "tsc --noEmit",
-    "db:generate": "prisma generate",
-    "db:migrate": "prisma migrate dev",
-    "db:push": "prisma db push"
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@iprep/shared": "workspace:*",
-    "@prisma/adapter-better-sqlite3": "^7.8.0",
-    "better-sqlite3": "^12.9.0"
+    "@iprep/shared": "workspace:*"
   },
   "devDependencies": {
-    "@types/better-sqlite3": "^7.6.13",
-    "@types/node": "^20.0.0",
-    "prisma": "^7.8.0",
-    "typescript": "^5.3.3"
+    "prisma": "^7.8.0"
   }
 }

@@ -1,4 +1,7 @@
 node_modules/
 dist/
 coverage/
-.pnpm-store/
+.pnpm-store/ 
+generated
+*.db
+pnpm-lock.yaml

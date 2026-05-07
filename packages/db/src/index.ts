@@ -1,4 +1,4 @@
-export { prisma } from './client.js';
+export { prisma } from './prisma.js';
 export { runMigrations } from './migrate.js';
 
 export * from './queries/sessions.js';
