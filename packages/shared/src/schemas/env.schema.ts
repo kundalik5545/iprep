@@ -1,11 +1,12 @@
 import { z } from 'zod';
+import { IprepPaths } from '../utils/iprep-paths.js';
 
 // Single source of truth for all env vars — used by both server and CLI via @iprep/shared
 export const EnvSchema = z.object({
   // Server
-  PORT: z.string().default('3000'),
-  DATABASE_URL: z.string().min(1),
-  ALLOWED_ORIGINS: z.string().default('http://localhost:5173'), // comma-separated list for CORS
+  PORT: z.coerce.number().int().positive().default(3001),
+  DATABASE_URL: z.string().min(1).default(`file:${IprepPaths.dbFile}`),
+  CORS_ORIGIN: z.string().default('http://localhost:5173'),
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
 
   // BYOK — all AI keys are optional; provider fallback chain picks the first available

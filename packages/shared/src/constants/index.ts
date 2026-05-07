@@ -1,11 +1,16 @@
+import { IprepPaths } from '../utils/iprep-paths.js';
+
 // App identity
 export const APP_NAME = 'iprep';
 export const APP_VERSION = '0.0.1';
 
-// Default ports for each service
-export const DEFAULT_PORT = 3000; // server port
-export const DEFAULT_WS_PORT = 3001; // WebSocket port for real-time communication
-export const DEFAULT_FRONTEND_PORT = 5173; // Vite dev server port for frontend (only used in development)
+// Default environment values. Runtime env parsing should read from process.env.
+export const ENV_VARS = {
+  NODE_ENV: 'development',
+  PORT: 3000,
+  DATABASE_URL: `file:${IprepPaths.dbFile}`,
+  CORS_ORIGIN: 'http://localhost:5173',
+};
 
 // Valid interview package types
 export const INTERVIEW_PACKAGE_SLUGS = [

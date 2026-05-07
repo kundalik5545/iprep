@@ -9,6 +9,16 @@ const server = app.listen(env.PORT, () => {
   logger.info(`Server listening on port ${env.PORT}`, { env: env.NODE_ENV });
 });
 
+server.on('error', (err: NodeJS.ErrnoException) => {
+  if (err.code === 'EADDRINUSE') {
+    logger.error(`Port ${env.PORT} is already in use. Set PORT to another value.`);
+    process.exit(1);
+  }
+
+  logger.error('Server failed to start', { error: err.message });
+  process.exit(1);
+});
+
 const shutdown = async (signal: NodeJS.Signals) => {
   logger.info(`Received ${signal}, shutting down gracefully`);
   server.close(async () => {

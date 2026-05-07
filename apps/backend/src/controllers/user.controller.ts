@@ -1,19 +1,22 @@
 import type { Request, Response } from 'express';
+import { userRepository } from '../repositories/user.repo.js';
 
 export const userController = {
-  findAll(_req: Request, res: Response) {
-    res.status(200).json({ message: 'Find all users' });
+  async findAll(_req: Request, res: Response) {
+    const users = await userRepository.findAll();
+    res.status(200).json({ message: 'Find all users', data: users });
   },
-  findById(_req: Request, res: Response) {
+  async findById(req: Request, res: Response) {
     res.status(200).json({ message: 'Find user by ID' });
   },
-  create(_req: Request, res: Response) {
-    res.status(201).json({ message: 'Create user' });
+  async create(req: Request, res: Response) {
+    const user = await userRepository.create(req.body);
+    res.status(201).json({ message: 'Create user', data: user });
   },
-  update(_req: Request, res: Response) {
+  async update(req: Request, res: Response) {
     res.status(200).json({ message: 'Update user' });
   },
-  delete(_req: Request, res: Response) {
+  async delete(req: Request, res: Response) {
     res.status(200).json({ message: 'Delete user' });
   },
 };
