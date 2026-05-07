@@ -1578,13 +1578,13 @@ async function renderHistory() {
         </div>
         <div class="history-cards">
           <div class="hcard-header">
-            <div class="hcol-header" style="flex:0 0 108px;">Date</div>
-            <div class="hcol-header" style="flex:0 0 130px;">Package</div>
-            <div class="hcol-header" style="flex:1;">Tutor</div>
-            <div class="hcol-header" style="flex:0 0 80px;">Duration</div>
-            <div class="hcol-header" style="flex:0 0 64px;">Score</div>
-            <div class="hcol-header" style="flex:0 0 110px;">Status</div>
-            <div class="hcol-header" style="flex:0 0 190px;text-align:right;">Actions</div>
+            <div class="hcol-header hcol-date">Date</div>
+            <div class="hcol-header hcol-pkg">Package</div>
+            <div class="hcol-header hcol-tutor">Tutor</div>
+            <div class="hcol-header hcol-dur">Duration</div>
+            <div class="hcol-header hcol-score">Score</div>
+            <div class="hcol-header hcol-status">Status</div>
+            <div class="hcol-header hcol-acts">Actions</div>
           </div>
           <div id="history-cards-body">
             ${cardsHTML(sessions)}

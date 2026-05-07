@@ -6,6 +6,32 @@
 
 ---
 
+## Project Layout
+
+| Folder | Status | Notes |
+|--------|--------|-------|
+| `demo-app/` | ✅ Complete (v1) | Original prototype — 7 views, all features working |
+| `demo-app-2/` | 🔄 In Progress (v2) | Rebuilt from spec (`02-feature.md`) — 3 of 4 files done, `app.js` missing |
+| `app-docs/` | — | This file, plan docs, feature specs |
+
+---
+
+## demo-app-2 — Build Status
+
+Generated from spec: `app-docs/02-feature.md`
+
+| File | Status | Lines | Notes |
+|------|--------|-------|-------|
+| `index.html` | ✅ Done | 129 | Full shell, all 7 nav routes, sidebar, toast container |
+| `style.css` | ✅ Done | 1893 | Full design system, dark/light tokens, all component classes |
+| `mock-data.json` | ✅ Done | 746 | Tutors, packages, 6+ sessions w/ transcripts, analysis, fileSystem, communicationAnalysis, lifetimeCommunication |
+| `app.js` | ❌ Missing | — | Router, MockAPI, State, all 9 view renderers — **next step** |
+
+### Routes in demo-app-2
+`#dashboard` · `#new-interview` · `#session` · `#analysis` · `#history` · `#chat` · `#files` · `#communication` · `#settings`
+
+---
+
 ## What This Is
 
 A zero-build, single-file SPA (no bundler, no framework) that runs directly in a browser via `file://`.
@@ -16,7 +42,7 @@ Open `index.html` to use it.
 
 ---
 
-## Files
+## demo-app (v1) — Files
 
 | File | Lines | Purpose |
 |------|-------|---------|
